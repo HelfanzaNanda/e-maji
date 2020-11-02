@@ -2,7 +2,7 @@
 
 namespace App\Http\Livewire\Luhn;
 
-use Faker\Calculator\Luhn;
+use Faker\Calculator\Luhn as LuhnAlgortihm;
 use Livewire\Component;
 
 class LuhnIndex extends Component
@@ -16,8 +16,8 @@ class LuhnIndex extends Component
 
     public function store()
     {
-        $vaild = Luhn::isValid($this->number_card);
-        $checkDigit = Luhn::computeCheckDigit($this->number_card);
+        $vaild = LuhnAlgortihm::isValid($this->number_card);
+        //$checkDigit = Luhn::computeCheckDigit($this->number_card);
         //$checkSum = Luhn::computeCheckSum($this->number_card);
 
         dd($vaild);
